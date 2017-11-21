@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Races de chiens
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <button ion-item block full color="primary" (click)="openPicture()" text-center>Image alétoire</button>
+    <ion-list-header>
+      Liste des races
+    </ion-list-header>
+    <ion-item *ngFor="let breed of breeds | keys" (click)="goToBreedPage(breed.name, breed.hasSub)">
+      <h2>{{ breed.name | ucfirst }}</h2>
+      <ion-icon item-end name="md-paw"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

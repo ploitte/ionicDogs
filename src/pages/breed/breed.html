@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ name | ucfirst }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="cover" *ngIf="pictures.length > 0" [ngStyle]="{'background': 'url(' + pictures[0] + ') center center no-repeat'}">
+    <h1 text-uppercase>{{ name }}</h1>
+  </div>
+
+  <ion-list *ngIf="breeds.length > 0">
+    <ion-item-divider text-center> Races associées</ion-item-divider>
+    <ion-item *ngFor="let breed of breeds" (click)="goToSubBreedPage(name + '/' + breed)">
+      <h2>{{ breed | ucfirst }}</h2>
+      <ion-icon item-right name="md-paw"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block color="primary" (click)="openPicture(name)">Image alétoire</button>
+
+  <ion-slides pager *ngIf="pictures.length > 0">
+    <div *ngFor="let picture of pictures; let i = index">
+      <ion-slide *ngIf="i < 6">
+        <ion-card>
+          <img src="{{ picture }}" />
+          <ion-card-content>
+            <ion-card-title text-center>Image {{ i + 1 }}</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </div>
+  </ion-slides>
+</ion-content>

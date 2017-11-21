@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons right end>
+      <button ion-button icon-only (click)="closePicture()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Photo !</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="{{ picture }}" />
+    <ion-card-content>
+      <ion-card-title text-center>Votre photo aléatoire</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

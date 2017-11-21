@@ -1,0 +1,21 @@
+page-breed {
+  .content-ios {
+    margin-top: -55px;
+  }
+
+  .cover {
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    h1 {
+      padding-top: 70px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+  }
+}
